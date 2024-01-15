@@ -1,13 +1,17 @@
 /**
  * A simple module to calculate the bmi of the person
+ *
+ * @format
  */
+
+// import the bmi module here
+const bmiModule = require('./bmi');
 
 const height = 180;
 const weight = 80;
 
-
 function bmi() {
-    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    const bmi = bmiModule.calculate(height, weight);
     console.log('Your BMI is ' + bmi);
 }
 
