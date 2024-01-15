@@ -1,5 +1,5 @@
 /**
- * A simple module to calculate the bmi of the person
+ * Entry point of the application
  *
  * @format
  */

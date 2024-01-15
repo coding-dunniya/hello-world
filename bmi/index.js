@@ -11,8 +11,6 @@ const calculate = function (height, weight) {
     return bmi;
 };
 
-console.log('hello world');
-
 module.exports = {
     calculate: calculate,
 };
