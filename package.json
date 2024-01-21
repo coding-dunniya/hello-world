@@ -1,11 +1,45 @@
 {
-  "name": "hello_world",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "hello-world",
+    "version": "1.0.0",
+    "description": "A sample Node.js app using Express 4",
+    "keywords": [
+        "sample",
+        "hello world"
+    ],
+    "homepage": "https://example.com",
+    "dependencies": {
+        "quick-is-prime": "^1.0.7"
+    },
+    "author": {
+        "name": "Ritesh Sangwan",
+        "email": "test@test.com"
+    },
+    "contributors": [
+        {
+            "name": "Ritesh Sangwan",
+            "email": "test@test.com"
+        }
+    ],
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "engines": {
+        "node": ">=20.x.x"
+    },
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "cpu": [
+        "x64"
+    ],
+    "private": true,
+    "bugs": {
+        "url": "https://github.com/coding-dunniya/hello-world/issues"
+    },
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/heroku/node-js-sample"
+    }
 }
