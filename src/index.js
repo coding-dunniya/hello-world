@@ -6,23 +6,25 @@
 
 // import the bmi module here
 const bmiModule = require('./bmi');
-const isPrime = require('quick-is-prime');
 
-const height = 180;
-const weight = 80;
+// import the http module
+const http = require('http');
+// import url module to parse request url
+const url = require('url');
 
-function bmi() {
+const server = http.createServer(function callback(req, res) {
+    // this is the callback function which is executed
+    // every time an incoming request is received
+    const queryParams = url.parse(req.url, true).query;
+    const height = parseInt(queryParams.height);
+    const weight = parseInt(queryParams.weight);
+    if (isNaN(height) || isNaN(weight)) {
+        res.writeHead(400, { 'Content-Type': 'text/plain' });
+        return res.end('invalid height and weight parameters');
+    }
     const bmi = bmiModule.calculate(height, weight);
-    console.log('Your BMI is ' + bmi);
-}
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(`Your BMI is ${bmi}`);
+});
 
-function primeNumbers() {
-    console.log(isPrime(7));
-    console.log(isPrime(77777));
-    console.log(isPrime(89876767))
-    console.log(isPrime(91));
-}
-
-bmi();
-
-primeNumbers();
+server.listen(3000);
